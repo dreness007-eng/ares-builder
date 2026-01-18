@@ -7,25 +7,22 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
+    
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-
-    - name: Install PyInstaller
-      run: pip install pyinstaller
-
-    - name: Build EXE
-      run: pyinstaller --onefile --noconsole --name "ares" main.py
-
+    - uses: actions/checkout@v3
+    
+    - name: Setup MinGW
+      run: |
+        choco install mingw -y
+        refreshenv
+    
+    - name: Build C executable
+      run: |
+        gcc --version
+        gcc -o ares.exe main.c -lwininet -lshell32 -ladvapi32 -mwindows -O2 -s
+    
     - name: Upload Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
-        name: ares-windows
-        path: dist/ares.exe
-
+        name: ares
+        path: ares.exe
